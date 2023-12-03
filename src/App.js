@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Update this line
+import Home from './pages/Home';
+import LandingPage from './pages/LandingPage';
+import NotFound from './pages/NotFound';
+import DonorForm from './components/Donor/DonorForm';
+import DonorPage from './components/Donor/DonorPage';
+import HospitalSignup from './components/Hospital/HospitalSignup';
+import HospitalLogin from './components/Hospital/HospitalLogin';
+import BloodGroupSelection from './components/Hospital/BloodGroupSelection';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes> {/* Change 'Switch' to 'Routes' */}
+        <Route path="/" element={<Home />} />
+        <Route path="/landing" element={<LandingPage />} />
+        <Route path="/donor/form" element={<DonorForm />} />
+        <Route path="/donor/:id" element={<DonorPage />} />
+        <Route path="/hospital/signup" element={<HospitalSignup />} />
+        <Route path="/hospital/login" element={<HospitalLogin />} />
+        <Route path="/hospital/blood-group-selection" element={<BloodGroupSelection />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes> {/* Change 'Switch' to 'Routes' */}
+    </Router>
   );
 }
 
