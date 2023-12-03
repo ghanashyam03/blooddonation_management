@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
 const HospitalSignup = () => {
   const [hospitalName, setHospitalName] = useState('');
   const [email, setEmail] = useState('');
@@ -41,6 +41,9 @@ const HospitalSignup = () => {
 
         <button type="submit">Sign Up</button>
       </form>
+      <Link to="/hospital/Login">
+        <button>Login</button>
+      </Link>
     </div>
   );
 };

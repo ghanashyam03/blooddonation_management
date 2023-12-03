@@ -12,16 +12,16 @@ import BloodGroupSelection from './components/Hospital/BloodGroupSelection';
 function App() {
   return (
     <Router>
-      <Routes> {/* Change 'Switch' to 'Routes' */}
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/landing" element={<LandingPage />} />
         <Route path="/donor/form" element={<DonorForm />} />
         <Route path="/donor/:id" element={<DonorPage />} />
         <Route path="/hospital/signup" element={<HospitalSignup />} />
         <Route path="/hospital/login" element={<HospitalLogin />} />
-        <Route path="/hospital/blood-group-selection" element={<BloodGroupSelection />} />
+        <Route path="/bloodgroupselection" element={<BloodGroupSelection />} /> {/* Update path */}
         <Route path="*" element={<NotFound />} />
-      </Routes> {/* Change 'Switch' to 'Routes' */}
+      </Routes>
     </Router>
   );
 }

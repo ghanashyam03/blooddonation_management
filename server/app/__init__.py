@@ -16,4 +16,4 @@ app.config['MYSQL_DB'] = MYSQL_DB
 mysql = MySQL(app)
 
 # Importing route files
-from . import donor_routes, hospital_routes
+from . import donor_routes, hospital_routes, hospital_login_routes
