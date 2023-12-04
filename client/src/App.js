@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Update this line
 import Home from './pages/Home';
-import LandingPage from './pages/LandingPage';
+// import LandingPage from './pages/LandingPage';
 import NotFound from './pages/NotFound';
 import DonorForm from './components/Donor/DonorForm';
 import DonorPage from './components/Donor/DonorPage';
@@ -14,7 +14,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/landing" element={<LandingPage />} />
+        {/* <Route path="/landing" element={<LandingPage />} /> */}
         <Route path="/donor/form" element={<DonorForm />} />
         <Route path="/donor/:id" element={<DonorPage />} />
         <Route path="/hospital/signup" element={<HospitalSignup />} />
