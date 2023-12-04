@@ -6,11 +6,13 @@ def add_donor():
     try:
         data = request.get_json()
         name = data.get('name')
+        email = data.get('email')
         phone = data.get('phone')
         blood_group = data.get('bloodGroup')
 
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO donor (name, phone, blood_group) VALUES (%s, %s, %s)", (name, phone, blood_group))
+        cur.execute("INSERT INTO donor (name, phone, email, blood_group) VALUES (%s, %s, %s, %s)", (name, phone, email, blood_group))
+
         mysql.connection.commit()
         cur.close()
 

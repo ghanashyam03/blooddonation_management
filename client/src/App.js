@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         {/* <Route path="/landing" element={<LandingPage />} /> */}
         <Route path="/donor/form" element={<DonorForm />} />
-        <Route path="/donor/:id" element={<DonorPage />} />
+        <Route path="/donor/thank" element={<DonorPage />} />
         <Route path="/hospital/signup" element={<HospitalSignup />} />
         <Route path="/hospital/login" element={<HospitalLogin />} />
         <Route path="/bloodgroupselection" element={<BloodGroupSelection />} /> {/* Update path */}

@@ -25,7 +25,7 @@ export default function Example() {
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
 
           <h1 className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            Thankyou Dheeraj
+          Thankyou
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
           Thank you for joining our blood donation community – your registration brings hope and saves lives
