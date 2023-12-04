@@ -4,6 +4,9 @@ from . import app, mysql
 
 CORS(app)
 
+def row_to_dict(cursor, row):
+    return {cursor.description[i][0]: value for i, value in enumerate(row)}
+
 @app.route('/api/donors/bloodgroup', methods=['POST'])
 def get_donors_by_blood_group():
     try:
@@ -11,9 +14,9 @@ def get_donors_by_blood_group():
         blood_group = data.get('blood_group')
         print('Received blood group:', blood_group)
 
-        cur = mysql.connection.cursor(dictionary=True)
+        cur = mysql.connection.cursor()
         cur.execute("SELECT * FROM donor WHERE blood_group = %s", (blood_group,))
-        donors = cur.fetchall()
+        donors = [row_to_dict(cur, row) for row in cur.fetchall()]
         cur.close()
 
         print('Returning donors:', donors)
