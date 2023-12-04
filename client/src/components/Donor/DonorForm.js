@@ -7,6 +7,7 @@ export default function DonorForm() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [bloodGroup, setBloodGroup] = useState('');
+  const [email, setEmail] = useState('');
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
@@ -15,6 +16,7 @@ export default function DonorForm() {
     try {
       await axios.post('http://localhost:5000/api/donor/add', {
         name,
+        email,
         phone,
         bloodGroup
       });
@@ -60,6 +62,24 @@ export default function DonorForm() {
                 />
               </div>
             </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900"  >
+                Email
+              </label>
+              <div className="mt-2">
+                <input
+                  id="text"
+                  name="text"
+                  type="text"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)} 
+                  autoComplete="text"
+                  required
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+
 
             <div>
               <div className="flex items-center justify-between">
